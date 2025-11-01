@@ -1,0 +1,18 @@
+# Example rows — edit freely
+- model: GPT-4o
+  score: 89.5
+  notes: Strong reasoning; good on tool-use tasks
+  date: 2025-10-20
+  link: https://openai.com/
+
+- model: Llama-3.1-70B
+  score: 84.2
+  notes: Open weights; solid coding
+  date: 2025-10-15
+  link: https://ai.meta.com/
+
+- model: Qwen-2.5-72B
+  score: 82.0
+  notes: Competitive multilingual
+  date: 2025-10-10
+  link: https://huggingface.co/

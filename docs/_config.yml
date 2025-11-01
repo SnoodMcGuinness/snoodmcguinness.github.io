@@ -30,6 +30,11 @@ baseurl: ""      # place folder name if the site is served in a subfolder
 twitter_username: jekyllrb
 github_username:  jekyll
 
+header_pages:
+  - tech.md
+  - personal.md
+  - cv.md
+
 # Build settings
 theme: minima
 plugins:
