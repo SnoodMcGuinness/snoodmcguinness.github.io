@@ -40,7 +40,7 @@ A few sentences about the technical project, goals, and scope. <!-- Add details 
 
 ## Experiment Posts
 <ul class="post-list">
-  {%- assign tech_posts = site.posts | where_exp: "p", "p.categories contains 'tech'" -%}
+  {%- assign tech_posts = site.categories.tech | sort: "date" | reverse -%}
   {%- for post in tech_posts -%}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
