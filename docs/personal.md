@@ -4,8 +4,9 @@ layout: page
 permalink: /personal/
 ---
 
+## Posts
 <ul class="post-list">
-  {%- assign personal_posts = site.posts | where_exp: "p", "p.categories contains 'personal'" -%}
+  {%- assign personal_posts = site.categories.personal | sort: "date" | reverse -%}
   {%- for post in personal_posts -%}
     <li>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
