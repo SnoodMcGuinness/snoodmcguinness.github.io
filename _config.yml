@@ -10,24 +10,22 @@ baseurl: ""
 
 theme: minima
 
+author:
+  name: Sam Sutherland
+  email: sam.sutherland@hotmail.co.uk
+
 minima:
   nav_pages:
     - ml.md
   show_excerpts: true
 
   social_links:
-    - title: GitHub
-      icon: github
-      url: "https://github.com/SnoodMcGuinness"
-    - title: LinkedIn
-      icon: linkedin
-      url: "https://www.linkedin.com/in/<your-handle>"
-    - title: Google Scholar
-      icon: graduation-cap   # FA fallback for Scholar
-      url: "https://scholar.google.com/citations?user=<your_id>"
-    - title: Email
-      icon: envelope
-      url: "mailto:sam.sutherland@hotmail.co.uk"
+    - platform: github
+      user_url: "https://github.com/SnoodMcGuinness"
+    - platform: linkedin
+      user_url: "https://www.linkedin.com/in/<your-handle>"
+    - platform: google_scholar
+      user_url: "https://scholar.google.com/citations?user=<your_id>"
 
 plugins:
   - jekyll-feed
