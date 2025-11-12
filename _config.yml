@@ -14,12 +14,11 @@ author:
   name: Sam Sutherland
   email: sam.sutherland@hotmail.co.uk
 
-github_username: SnoodMcGuinness
-linkedin_username: <your-handle>
-
 minima:
   social_links:
-    google_scholar: https://scholar.google.com/citations?user=<your_id>
+    - { platform: github, user_url: "https://github.com/SnoodMcGuinness" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/<your-handle>" }
+    - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=<your_id>" }
   
 header_pages:
   - ml.md
