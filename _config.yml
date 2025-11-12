@@ -8,7 +8,7 @@ domain: snoodmcguinness.github.io
 url: https://snoodmcguinness.github.io
 baseurl: ""
 
-remote_theme: jekyll/minima@v3.0
+theme: minima
 
 minima:
   nav_pages:
@@ -31,4 +31,3 @@ minima:
 
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
