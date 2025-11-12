@@ -19,15 +19,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          source: ./
-          destination: ./_site
+          ruby-version: '3.3'     # any 3.x is fine
+          bundler-cache: true
+
+      - name: Install gems
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Print versions (sanity check)
+        run: |
+          bundle exec ruby -e "puts 'Jekyll: ' + Gem.loaded_specs['jekyll'].version.to_s"
+          bundle exec ruby -e "puts 'Minima: ' + Gem.loaded_specs['minima'].version.to_s"
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --trace --verbose
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
 
   deploy:
     runs-on: ubuntu-latest
