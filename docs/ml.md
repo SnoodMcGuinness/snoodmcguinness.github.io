@@ -32,22 +32,27 @@ The best way to learn is to do. I recently found out that hiring RTX 4090s on ru
     </tr>
   </thead>
   <tbody>
-  {%- assign rows = site.data.llms | sort: "score" | reverse -%}
-  {%- for r in rows -%}
-    <tr>
-      <td>{{ forloop.index }}</td>
-      <td>
-        {%- if r.link -%}
-          <a href="{{ r.link }}">{{ r.model }}</a>
-        {%- else -%}
-          {{ r.model }}
-        {%- endif -%}
-      </td>
-      <td>{{ r.score }}</td>
-      <td>{{ r.notes }}</td>
-      <td>{{ r.date }}</td>
-    </tr>
-  {%- endfor -%}
+  {%- assign rows = site.data.llms -%}
+  {%- if rows and rows.size > 0 -%}
+    {%- assign rows = rows | sort: "score" | reverse -%}
+    {%- for r in rows -%}
+      <tr>
+        <td>{{ forloop.index }}</td>
+        <td>
+          {%- if r.link -%}
+            <a href="{{ r.link }}">{{ r.model }}</a>
+          {%- else -%}
+            {{ r.model }}
+          {%- endif -%}
+        </td>
+        <td>{{ r.score }}</td>
+        <td>{{ r.notes }}</td>
+        <td>{{ r.date }}</td>
+      </tr>
+    {%- endfor -%}
+  {%- else -%}
+    <tr><td colspan="5">No models yet.</td></tr>
+  {%- endif -%}
   </tbody>
 </table>
 
