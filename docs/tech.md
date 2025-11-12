@@ -38,14 +38,24 @@ A few sentences about the technical project, goals, and scope. <!-- Add details 
   </tbody>
 </table>
 
-## Experiment Posts
-<ul class="post-list">
-  {%- assign tech_posts = site.categories.tech | sort: "date" | reverse -%}
-  {%- for post in tech_posts -%}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
-      {%- if post.excerpt -%}<p>{{ post.excerpt }}</p>{%- endif -%}
-    </li>
-  {%- endfor -%}
-</ul>
+[//]: # (## Experiment Posts)
+
+[//]: # (<ul class="post-list">)
+
+[//]: # (  {%- assign tech_posts = site.categories.tech | sort: "date" | reverse -%})
+
+[//]: # (  {%- for post in tech_posts -%})
+
+[//]: # (    <li>)
+
+[//]: # (      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>)
+
+[//]: # (      <span class="post-meta">{{ post.date | date: "%-d %b %Y" }}</span>)
+
+[//]: # (      {%- if post.excerpt -%}<p>{{ post.excerpt }}</p>{%- endif -%})
+
+[//]: # (    </li>)
+
+[//]: # (  {%- endfor -%})
+
+[//]: # (</ul>)
