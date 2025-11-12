@@ -53,12 +53,13 @@ The best way to learn is to do. I recently found out that hiring RTX 4090s on ru
 
 ### Posts
 <ul class="post-list">
-    {% assign ml_posts = site.posts | where_exp: "p", "p.tags contains 'ml'" | sort: "date" %}
-    {% if ml_posts.size > 0 %}
-      {% for post in ml_posts %}
-        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date_to_string }}</li>
-      {% endfor %}
-    {% else %}
-      <p>No ML posts yet.</p>
-    {% endif %}
+  {% assign ml_posts = site.posts | where_exp: "p", "p.tags contains 'ml'" %}
+  {% if ml_posts and ml_posts.size > 0 %}
+    {% assign ml_posts = ml_posts | sort: "date" %}
+    {% for post in ml_posts %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> — {{ post.date | date_to_string }}</li>
+    {% endfor %}
+  {% else %}
+    <p>No ML posts yet.</p>
+  {% endif %}
 </ul>
