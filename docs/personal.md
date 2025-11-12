@@ -4,7 +4,7 @@ layout: page
 permalink: /personal/
 ---
 
-## Posts
+### Posts
 <ul class="post-list">
   {%- assign personal_posts = site.categories.personal | sort: "date" | reverse -%}
   {%- for post in personal_posts -%}
