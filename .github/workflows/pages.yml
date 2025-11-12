@@ -35,7 +35,6 @@ jobs:
       - name: Print versions (sanity check)
         run: |
           bundle exec ruby -e "puts 'Jekyll: ' + Gem.loaded_specs['jekyll'].version.to_s"
-          bundle exec ruby -e "puts 'Minima: ' + Gem.loaded_specs['minima'].version.to_s"
 
       - name: Build site
         env:
